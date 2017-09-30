@@ -1,0 +1,16 @@
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=/Library/Fonts"
+
+touch $HOME/.iex_history
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+export EDITOR=vim
+export VISUAL=vim
+
+source ~/.passwords
+source ~/.aliases
+

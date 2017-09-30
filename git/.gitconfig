@@ -1,0 +1,20 @@
+[core]
+	excludesfile = /Users/luiscalado/.gitignore_global
+        editor = vim
+[user]
+	name = Luis Calado
+	email = luisfmcalado@gmail.com
+[web]
+        browser = google-chrome
+[commit]
+	template = /Users/luiscalado/.stCommitMsg
+[merge]
+	tool = meld
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/luiscalado/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	user = luisfmcalado

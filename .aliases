@@ -1,0 +1,81 @@
+
+###
+# Misc aliases
+###
+
+alias rmdstore='find . -name ".DS_Store" -depth -exec rm {} \;'
+alias tf='terraform'
+alias jmeter='open /usr/local/bin/jmeter'
+alias randpassword='openssl rand -base64 32'
+alias afind='ack -io'
+alias ffind='find . -type f -name'
+alias dfind='find . -type d -name'
+alias rzshrc='source ~/.zshrc'
+alias cpr='cp -r'
+alias jvs='/usr/libexec/java_home -V'
+alias jvsa='jenv add'
+alias repos='cd ~/repos'
+alias personal='cd ~/repos/personal'
+alias work='cd ~/repos/work'
+alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
+alias grdb="gradle build"
+alias grdt="gradle test"
+alias grdr="gradle run"
+
+if [ "$HIST_STAMPS" = "mm/dd/yyyy" ]
+then
+  alias history='fc -fl 1'
+elif [ "$HIST_STAMPS" = "dd.mm.yyyy" ]
+then
+  alias history='fc -El 1'
+elif [ "$HIST_STAMPS" = "yyyy-mm-dd" ]
+then
+  alias history='fc -il 1'
+else
+  alias history='fc -l 1'
+fi
+
+alias digs='dig +short'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias uuid="python -c 'import sys,uuid; sys.stdout.write(uuid.uuid4().hex)' | pbcopy && pbpaste && echo"
+alias ccolors='for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"'
+
+alias ys='yarn start'
+alias yc='yarn clean'
+alias yt='yarn test'
+alias yA='yarn add'
+alias yR='yarn remove'
+alias yU='yarn upgrade'
+
+alias dcm='docker-machine'
+alias dcpf='docker ps --format "{{.ID}}: {{.Names}} ---> {{.Ports}}"'
+
+alias kc='kubectl'
+
+alias lpp='lpass show --password --clip'
+
+alias vdf='vim -d'
+alias cls='clear'
+
+alias emcd='emacs --daemon'
+alias emc='emacsclient -t'
+alias e='emacsclient -t'
+alias gce='gcloud'
+
+alias th='history | awk '"'"'{CMD[$4]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}'"'"' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n 25'
+
+###
+# Git aliases
+###
+
+alias gpy='git log --graph --oneline --decorate --all'
+alias gcot='git checkout --track'
+
+###
+# Heroku aliases
+###
+
+alias hp='heroku accounts:set personal'
+alias hw='heroku accounts:set work'
+alias hc='heroku accounts:current'
+
