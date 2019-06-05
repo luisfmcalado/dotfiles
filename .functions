@@ -1,22 +1,4 @@
 ###
-# Brew services
-###
-
-bsi(){
-  brew services start rabbitmq
-  brew services start mongodb
-  brew services start redis
-
-  rabbitmq-plugins enable rabbitmq_management
-}
-
-bss(){
-  brew services stop rabbitmq
-  brew services stop mongodb
-  brew services stop redis
-}
-
-###
 # Docker functions
 ###
 
@@ -39,25 +21,9 @@ dstop(){
   docker stop $(docker ps -aq)
 }
 
-# start rabbitmq
-drbst(){
-  docker run -d --name rmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
-}
-
-# start redis
-drst(){
-  docker run -d --name redis -p 6379:6379 redis
-}
-
 # start mongo
 dmst(){
   docker run -d --name mongo -p 27017:27017 -v ~/data:/data/db mongo
-}
-
-# start portainer
-dpst(){
-  docker run -v /var/run/docker.sock:/var/run/docker.sock \
-     --name portainer -d -p 9000:9000 portainer/portainer
 }
 
 ###
@@ -131,7 +97,7 @@ lcs(){
   grep -IirlZ $1 $2
 }
 
-loadenv() {
+lenv() {
  export $(cat $1 | grep -v "^#" | xargs)
  echo "Exported variables from $1"
 }

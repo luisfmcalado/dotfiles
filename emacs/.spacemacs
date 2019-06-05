@@ -34,6 +34,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     haskell
+     nginx
      lua
      windows-scripts
      csv
@@ -51,6 +53,10 @@ values."
      emacs-lisp
      git
      terraform
+     osx
+     bibtex
+     deft
+     pandoc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -59,6 +65,9 @@ values."
    dotspacemacs-additional-packages '(
     all-the-icons
     magithub
+    tern
+    ensime
+    flymd
     )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -333,7 +342,8 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (lua-mode diff-hl jsonnet-mode ensime powershell gradle-mode csv-mode scala-mode flymd web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode sql-indent hy-mode anaconda-mode yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode dash-functional helm-pydoc cython-mode pythonic terraform-mode evil-commentary web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode dockerfile-mode logview erlang jinja2-mode ansible-doc ansible rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby ac-alchemist smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magithub ghub+ magit magit-popup git-commit apiwrap ghub with-editor mmm-mode markdown-toc markdown-mode gh-md flycheck-credo ob-elixir flycheck-mix flycheck alchemist company elixir-mode yaml-mode org-plus-contrib macrostep elisp-slime-nav auto-compile packed ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (reveal-in-osx-finder pbcopy pandoc-mode ox-pandoc ht osx-trash osx-dictionary org-ref pdf-tools key-chord ivy htmlize tablist launchctl helm-bibtex parsebib deft biblio biblio-core company-ghc intero hlint-refactor hindent helm-hoogle haskell-snippets company-ghci ghc cmm-mode haskell-mode quelpa tern sibilant-mode nginx-mode lua-mode diff-hl jsonnet-mode ensime powershell gradle-mode csv-mode scala-mode flymd web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode sql-indent hy-mode anaconda-mode yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode dash-functional helm-pydoc cython-mode pythonic terraform-mode evil-commentary web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode dockerfile-mode logview erlang jinja2-mode ansible-doc ansible rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby ac-alchemist smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magithub ghub+ magit magit-popup git-commit apiwrap ghub with-editor mmm-mode markdown-toc markdown-mode gh-md flycheck-credo ob-elixir flycheck-mix flycheck alchemist company elixir-mode yaml-mode org-plus-contrib macrostep elisp-slime-nav auto-compile packed ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+ '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

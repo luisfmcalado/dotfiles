@@ -12,10 +12,12 @@ Thumbs.db
 *.o
 *.so
 .idea/*
+.elixir_ls/
 
 .env
 .env.*
 .dev.env
 *.dev
 *.env
+.python-version
 docker-compose.override.yml

@@ -70,6 +70,7 @@ alias th='history | awk '"'"'{CMD[$4]++;count++;}END { for (a in CMD)print CMD[a
 
 alias gpy='git log --graph --oneline --decorate --all'
 alias gcot='git checkout --track'
+alias gcbaa='git branch | egrep -v "master|qa|staging|stg" | xargs git branch -D'
 
 ###
 # Heroku aliases
