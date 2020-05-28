@@ -13,7 +13,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular'
+
 Plugin 'plasticboy/vim-markdown'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-bufferline'

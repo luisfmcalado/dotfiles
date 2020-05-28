@@ -3,11 +3,12 @@
 # Misc aliases
 ###
 
+alias mux="tmuxinator"
 alias rmdstore='find . -name ".DS_Store" -depth -exec rm {} \;'
 alias tf='terraform'
 alias jmeter='open /usr/local/bin/jmeter'
-alias randpassword='openssl rand -base64 32'
-alias afind='ack -io'
+alias randpassword='openssl rand -base64 64'
+alias afind='ack -i'
 alias ffind='find . -type f -name'
 alias dfind='find . -type d -name'
 alias rzshrc='source ~/.zshrc'

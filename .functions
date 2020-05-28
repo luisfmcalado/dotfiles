@@ -116,3 +116,7 @@ oathotp(){
   echo -n $(lpass show --password $ONE_LOGIN_NAME)$(oathotp) | pbcopy
   echo "One login + OTP copied to clipboard"
 }
+
+workd(){
+  cd ~/repos/work/$1
+}

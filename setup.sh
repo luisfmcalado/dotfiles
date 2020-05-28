@@ -102,6 +102,7 @@ then
     tmux source ~/.tmux.conf
 
     # install vim plugins
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     echo 'Install vim plugins'
     vim +PluginInstall +qall
   fi

@@ -1,6 +1,10 @@
+export GOPATH=/Users/luis.calado/go
 export TERM="xterm-256color"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
+export PATH=$PATH:~/Library/Python/3.7/bin/
+export PATH="/usr/local/opt/helm@2/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin/"
 
 eval "$(jenv init -)"
 eval $(thefuck --alias)
@@ -14,8 +18,8 @@ esac
 
 plugins=(
   git bundler rvm chucknorris common-aliases docker gem git-extras gradle mvn
-  redis-cli tmux web-search docker-compose vagrant kubectl completion zsh npm yarn mix zsh-autosuggestions
-  gradle 
+  redis-cli tmux web-search docker-compose vagrant kubectl npm yarn mix
+  gradle zsh-completions
 )
 
 export UPDATE_ZSH_DAYS=5
@@ -70,12 +74,25 @@ ZSH_THEME="zhann"
 zle_highlight=(default:bold)
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/bin/aws_zsh_completer.sh
+#source /usr/local/bin/aws_zsh_completer.sh
 source ~/.bash_profile
 source ~/.bashrc
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/vault vault
+
+
+#autoload -U +X bashcompinit && bashcompinit
+#complete -o nospace -C /usr/local/bin/vault vault
+#source ~/.bin/tmuxinator.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+#export PATH="$PATH:$HOME/.rvm/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+#if [ -f '/Users/luis.calado/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/luis.calado/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+#if [ -f '/Users/luis.calado/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/luis.calado/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+#export PATH="/usr/local/opt/node@10/bin:$PATH"
